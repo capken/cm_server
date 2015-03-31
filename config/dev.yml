@@ -1,0 +1,5 @@
+---
+:server: localhost
+:port: 4567
+:adapter: sqlite3
+:database: db.sqlite3
