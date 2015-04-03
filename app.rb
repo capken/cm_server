@@ -23,7 +23,7 @@ post "/api/session" do
   params = JSON.parse request.body.read.to_s
   user_role = params["role"]
 
-  model_class = Object.const_get user_role
+  model_class = Object.const_get user_role.capitalize
   user = model_class.find_by_email(params["email"])
   if user and user.authenticate(params["password"])
     token = {
@@ -35,9 +35,14 @@ post "/api/session" do
     session[:user] = token
 
     status 200
-    json msg: "Success"
+    json msg: "Success", name: user.name
   else
     status 404 
     json msg: "Not found or password mismatch"
   end
+end
+
+delete "/api/session" do
+  session[:user] = nil
+  json msg: "Success"
 end
