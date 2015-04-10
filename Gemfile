@@ -13,3 +13,5 @@ gem "will_paginate"
 gem "resque"
 
 gem "unicorn"
+
+gem 'hashids'

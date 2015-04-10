@@ -2,6 +2,12 @@ class CreateCompanyModel < ActiveRecord::Migration
   def change
     create_table :companies do |t|
       t.string :name
+      t.string :desc
+      t.string :website
+      t.string :address
+      t.string :tel
+      t.string :email
+
       t.timestamps null: false
     end
 

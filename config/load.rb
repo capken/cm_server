@@ -4,6 +4,7 @@ require "bundler/setup"
 require "logger"
 require "json"
 require "yaml"
+require 'hashids'
 
 require "sinatra/activerecord"
 
